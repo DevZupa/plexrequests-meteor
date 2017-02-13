@@ -1,12 +1,12 @@
 @media (max-width: 48em) {
   .home {
-    padding-top: 1rem;
+    margin-top: 2rem;
   }
 }
 
 @media (min-width: 48em) {
   .home {
-    padding-top: 4rem;
+    margin-top: 8rem;
   }
 }
 
@@ -31,4 +31,8 @@ a {
   &:hover {
     color: $primary-color-lighter;
   }
+}
+
+.login-container {
+  padding: 50px 0;
 }

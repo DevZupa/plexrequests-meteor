@@ -1,26 +1,23 @@
 @media (max-width: 48em) {
-  .requests {
-    padding-top: 1rem;
-  }
+
 }
 
 @media (min-width: 48em) {
-  .requests {
-    padding-top: 4rem;
-  }
   .request-details-buttons {
     text-align: right;
   }
 }
 
+.request-item{
+
+}
+
 .requests {
+  td, th {
+    padding: 5px;
+  }
   p {
     font-weight: 300;
-  }
-
-  .selectors {
-    margin-top: 1rem;
-    padding-bottom: 2rem;
   }
 
   .filter-sort {
@@ -50,6 +47,10 @@
   }
 }
 
+.request-title {
+  font-size: 18px;
+}
+
 .success-icon {
   color: $success-color;
 }
@@ -64,18 +65,56 @@
   right: 20px;
   display: inline-block;
   color: #ccc;
-  border: 1px solid #ccc;
-  padding: 6px 10px;
-  border-radius: 3px;
-  opacity: 0.5;
-
+  border: 0;
+  padding: 0;
+  border-radius: 50%;
+  height: 50px;
+  width: 50px;
+  @extend .grey.darken-4;
+  @extend .white-text;
+  @extend .z-depth-1;
+  z-index: 999;
+  text-align: center;
   &:hover {
     cursor: hand;
     cursor: pointer;
     opacity: .9;
   }
+  .material-icons {
+    line-height: 50px;
+    height: 50px;
+  }
 }
 
 .loading {
   text-align: center;
+}
+
+.requests {
+  .card {
+    border: 0;
+    &.horizontal {
+      flex-flow: row wrap;
+    }
+  }
+  .card-header {
+    padding: 0;
+    width: 100%;
+    transition: opacity .2s ease-out;
+    flex: 1 100%;
+    border-bottom: 0;
+
+    a {
+      display: block;
+      padding: 15px 20px;
+      transition: all 300ms ease;
+      @extend .white-text;
+      @extend .grey.darken-4;
+      &:hover,
+      &:focus {
+        @extend .grey.darken-3;
+        text-decoration: none;
+      }
+    }
+  }
 }

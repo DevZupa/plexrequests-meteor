@@ -1,0 +1,33 @@
+
+@for $i from 1 through 20 {
+  .font-s#{$i} {
+    font-size: #{$i}px;
+  }
+}
+
+$directions: 'r', 'l', 't', 'b';
+$margins: 0, 5, 10, 15, 20, 30, 40, 50, 60, 70, 80, 90, 100;
+
+@each $direction in $directions {
+  @each $j in $margins {
+    .push-#{$j}-#{$direction} {
+      @if($direction == 'r') {
+        margin-right: #{$j}px;
+      }
+      @if($direction == 'l') {
+        margin-left: #{$j}px;
+      }
+      @if($direction == 't') {
+        margin-top: #{$j}px;
+      }
+      @if($direction == 'b') {
+        margin-bottom: #{$j}px;
+      }
+    }
+    @if($direction == 'b') {
+      .push-#{$j} {
+        margin-bottom: #{$j}px;
+      }
+    }
+  }
+}

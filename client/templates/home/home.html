@@ -1,29 +1,42 @@
 <template name="home">
-  <div class="col-md-10 col-md-offset-1">
+<div class="row">
+  <div class="col s12 m6 l4 offset-m3 offset-l4">
     <div class="home">
-      <h1>Login</h1>
+      <div class="block">
+        <div class="block-header orange white-text">
+          <h3 class="block-title text-center">Login</h3>
+        </div>
+        <div class="block-content ">
+          <div class="">
+            <p class="center-align black-text">
+              Want to watch a movie or tv show but it's not currently on Plex? <br>
+              Login below with your Plex.tv username{{#if requirePassword}} and password{{/if}}! <span title="Your login details are only used to authenticate your Plex account."><i class="fa fa-question-circle"></i></span>
+            </p>
 
-      <p>
-        Want to watch a movie or tv show but it's not currently on Plex? <br>
-        Login below with your Plex.tv username{{#if requirePassword}} and password{{/if}}! <span title="Your login details are only used to authenticate your Plex account."><i class="fa fa-question-circle"></i></span>
-      </p>
+            <form class="form clearfix" id="sign-in">
 
-      <form class="form col-md-6" id="sign-in">
-        <fieldset>
-          <div class="form-group">
-            <label for="plex-username">Plex.tv Username</label>
-            <input type="text" class="form-control" id="plex-username" placeholder="Username">
+              <div class="input-field col s12">
+                <input id="plex-username" type="text" class="validate">
+                <label for="plex-username">Plex.tv Username</label>
+              </div>
+
+              {{#if requirePassword}}
+              <div class="input-field col s12">
+                <input type="password" class="validate" id="plex-password">
+                <label for="plex-password">Password</label>
+              </div>
+              {{/if}}
+
+              <div class="col s12 push-30-b">
+                <button class="waves-effect waves-light btn orange" type="submit" id="submitButton"><i class="material-icons left">&#xE7FD;</i>Sign In</button>
+              </div>
+            </form>
+
           </div>
-          {{#if requirePassword}}
-            <div class="form-group">
-              <label for="plex-password">Password</label>
-              <input type="password" class="form-control" id="plex-password" placeholder="Password">
-            </div>
-          {{/if}}
-        </fieldset>
-        <button class="btn btn-secondary-outline" type="submit" id="submitButton"><i class="fa fa-user fa-fw"></i> Sign In</button>
-      </form>
-
+        </div>
+      </div>
     </div>
   </div>
+</div>
+
 </template>

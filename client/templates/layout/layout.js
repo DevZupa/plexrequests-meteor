@@ -14,5 +14,12 @@ Template.layout.onCreated(function(){
     } else if (data == 0) {
       $('#first-run-modal').modal('show');
     }
+
+    $('.js-button-collapse').sideNav({
+        draggable: true // Choose whether you can drag to open on touch screens
+      }
+    );
+
   });
 });
+
